@@ -19,7 +19,6 @@ console.log(Object.values(BANK_LIST)); //배열로 온다
 // 은행 선택하는 옵션 메뉴에 들어갈 형태로 만들기
 let bankList = bankListArr.map((el) => `<option>${el}</option>`).join("");
 console.log(bankList);
-
 // 은행 선택하는 select 안에 bankList 집어넣기
 $bankSelector.innerHTML = bankList;
 console.log($bankSelector);
@@ -28,7 +27,7 @@ console.log($bankSelector);
 $form.addEventListener("submit", (e) => {
   e.preventDefault();
   let currentBank = $bankSelector.options[$bankSelector.selectedIndex].text; //[0] => 성용은행
-  // console.log(currentBank);
+  console.log(currentBank);
 
   let currentBankKey = Object.keys(BANK_LIST).find(
     (key) => BANK_LIST[key] === currentBank

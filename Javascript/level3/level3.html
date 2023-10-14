@@ -26,9 +26,9 @@
   </head>
   <body>
     <form id="ingredient-form">
-      <p>재료명: <input name="ingredient" /></p>
-      <p>용량: <input name="weight" /></p>
-      <button>추가</button>
+      <p>재료명: <input name="ingredient" id="input-ingredient-name" /></p>
+      <p>용량: <input name="weight" id="input-weight" /></p>
+      <button id="input-all">추가</button>
     </form>
     <table>
       <tr class="thead">
@@ -36,7 +36,14 @@
         <th>무게</th>
         <th>관리</th>
       </tr>
+      <!--<tr class="thead">
+        <td>양파</td>
+        <td>200g</td>
+        <td>삭제</td>
+      </tr> -->
+      </tr>
     </table>
+
     <button id="submit_button" type="button">제출</button>
     <ul id="ingredient-list"></ul>
   </body>
