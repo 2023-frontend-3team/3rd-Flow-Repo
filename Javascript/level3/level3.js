@@ -2,12 +2,12 @@
 레시피 재료 추가하기
 */
 
-const $form = document.querySelector("#ingredient-form");
-const $inputIngredientName = document.querySelector("#input-ingredient-name");
-const $inputWeight = document.querySelector("#input-weight");
-const $th = document.querySelectorAll(".thead > th");
+const $form = document.querySelector("#ingredient-form"); //form 태그 불러오기
+const $inputIngredientName = document.querySelector("#input-ingredient-name"); //재료명 인풋
+const $inputWeight = document.querySelector("#input-weight"); //용량 인풋
+const $th = document.querySelectorAll(".thead > th"); //재료, 무게, 관리
 
-const $ingredientList = document.querySelector("#ingredient-list");
+const $ingredientList = document.querySelector("#ingredient-list"); //제출 ul칸
 
 const $addBtn = document.querySelector("#input-all");
 const $table = document.querySelector("table");
@@ -19,9 +19,10 @@ $form.addEventListener("submit", (e) => {
 let ingredientArr = [];
 $addBtn.addEventListener("click", () => {
   const $tr = document.createElement("tr");
-  const inputIngredientName = $inputIngredientName.value;
-  const inputWeight = $inputWeight.value;
+  const inputIngredientName = $inputIngredientName.value; //재료명에 적은 인풋 대임
+  const inputWeight = $inputWeight.value; //용량명에 적은 인풋 대입
 
+  //재료명 겹치지 않게
   if (ingredientArr.includes(inputIngredientName)) {
     alert("이미 존재하는 재료입니다.");
     $inputIngredientName.value = "";
@@ -39,7 +40,7 @@ $addBtn.addEventListener("click", () => {
     $table.append($tr);
     $tr.append($td); //추가
 
-    //const $td = document.querySelector("td");
+    //삭제버튼 추가
     const $delBtn = document.createElement("button");
     $delBtn.className = "delete-btn";
 
@@ -49,6 +50,7 @@ $addBtn.addEventListener("click", () => {
 
     $tr.className = "thead";
 
+    //입력후 비워주기
     $inputIngredientName.value = "";
     $inputWeight.value = "";
 
